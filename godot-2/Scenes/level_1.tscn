@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://7dapf03kerp5" path="res://Scripts/character_body_2d.gd" id="2_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://cjh1wqplvsa3u" path="res://Assets/osaka.jpg" id="3_6444e"]
 [ext_resource type="Texture2D" uid="uid://c5r2xgs5bwb7i" path="res://Assets/spike.png" id="4_6444e"]
+[ext_resource type="Shader" uid="uid://c3m1sq1ib8wxt" path="res://Scenes/level_1.gdshader" id="4_evi0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_xfk5q")
@@ -787,6 +788,16 @@ texture = ExtResource("1_xfk5q")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsmp6"]
+shader = ExtResource("4_evi0p")
+shader_parameter/tint = Color(1, 0.3, 0.3, 1)
+shader_parameter/tint_strength = 0.55
+shader_parameter/edge_width = 0.1
+shader_parameter/edge_top = Color(0.3, 1, 0.53, 1)
+shader_parameter/edge_right = Color(0.3, 0.62, 1, 1)
+shader_parameter/edge_bottom = Color(1, 0.3, 0.3, 1)
+shader_parameter/edge_left = Color(1, 0.85, 0.3, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5dx7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahj4p"]
@@ -806,6 +817,7 @@ scale = Vector2(-2.1119857, 2.21692)
 script = ExtResource("2_7p6j4")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=878983861]
+material = SubResource("ShaderMaterial_lsmp6")
 position = Vector2(-2.5331974e-07, 5.364418e-07)
 scale = Vector2(0.056818184, 0.04016064)
 texture = ExtResource("3_6444e")

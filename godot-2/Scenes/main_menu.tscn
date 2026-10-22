@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://oi7pj2t2n8yy"]
 
-[ext_resource type="Script" uid="uid://dxt0xs7mio7ns" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://v8k60km7nh2n" path="res://Assets/labubu.png" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://dxt0xs7mio7ns" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://v8k60km7nh2n" path="res://Assets/labubu.png" id="2_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://dqg03001ljmqo" path="res://Sound/Sata-Andagi.ogg" id="3_1ehe0"]
 
 [node name="MainMenu" type="Control" unique_id=566140006]
 layout_mode = 3
@@ -10,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
+script = ExtResource("1_48xlc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=646287566]
 layout_mode = 0
@@ -53,8 +54,40 @@ offset_left = 32.0
 offset_top = 48.0
 offset_right = 193.0
 offset_bottom = 189.0
-texture = ExtResource("2_7vrkn")
+texture = ExtResource("2_1ehe0")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=76631168]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 35.0
+offset_right = 1080.0
+offset_bottom = 176.0
+texture = ExtResource("2_1ehe0")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=604423821]
+layout_mode = 0
+offset_left = 939.0
+offset_top = 467.0
+offset_right = 1100.0
+offset_bottom = 608.0
+texture = ExtResource("2_1ehe0")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=380229572]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 473.0
+offset_right = 188.0
+offset_bottom = 614.0
+texture = ExtResource("2_1ehe0")
+expand_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=621175716]
+position = Vector2(574, 37)
+stream = ExtResource("3_1ehe0")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
