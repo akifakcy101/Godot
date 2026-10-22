@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://oi7pj2t2n8yy"]
+
+[ext_resource type="Script" uid="uid://dxt0xs7mio7ns" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://v8k60km7nh2n" path="res://Assets/labubu.png" id="2_7vrkn"]
+
+[node name="MainMenu" type="Control" unique_id=566140006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=646287566]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.9446625, 0.5445344, 0.13106146, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1129874155]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48900002
+anchor_top = 0.50100005
+anchor_right = 0.48900002
+anchor_bottom = 0.50100005
+offset_left = -344.328
+offset_top = -319.64804
+offset_right = 341.672
+offset_bottom = 321.35196
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=943315419]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "GAME OF THE YEAR (REALLY)"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=271091689]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PLAY THE GOTY"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1868211123]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "QUIT THE GOTY (NOOO)"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1322352006]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 193.0
+offset_bottom = 189.0
+texture = ExtResource("2_7vrkn")
+expand_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
